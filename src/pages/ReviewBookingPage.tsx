@@ -114,19 +114,22 @@ export default function ReviewBookingPage() {
                             <li><p>50% off up to $100 | Use code BOOKNOW</p>
                                 <button type={"button"} className={"button"}
                                         onClick={(e) => setDiscountState((prev) => {
-                                            if (e.target.innerText === "Apply") {
-                                                e.target.innerText = "Applied"
-                                                const total = ((ticketState.place?.price ? ticketState.place.price : 0)
-                                                    + (pickedFoodState > 1 ? foodItems[pickedFoodState].price : 0)
-                                                    + (extraBaggageState === 500 ? 500 : 0))
 
-                                                if (total * 0.5 > 100) {
-                                                    return prev + 100;
-                                                } else {
-                                                    return prev + total * 0.5
-                                                }
-                                            } else
-                                                return prev;
+                                            if (e.target instanceof HTMLButtonElement) {
+                                                if (e.target.innerText === "Apply") {
+                                                    e.target.innerText = "Applied"
+                                                    const total = ((ticketState.place?.price ? ticketState.place.price : 0)
+                                                        + (pickedFoodState > 1 ? foodItems[pickedFoodState].price : 0)
+                                                        + (extraBaggageState === 500 ? 500 : 0))
+
+                                                    if (total * 0.5 > 100) {
+                                                        return prev + 100;
+                                                    } else {
+                                                        return prev + total * 0.5
+                                                    }
+                                                } else
+                                                    return prev;
+                                            } else return prev
                                         })}
                                 >Apply
                                 </button>
@@ -135,13 +138,16 @@ export default function ReviewBookingPage() {
                                 <p>20% off | Use code FIRSTTIME</p>
                                 <button type={"button"} className={"button"}
                                         onClick={(e) => setDiscountState((prev) => {
-                                            if (e.target.innerText === "Apply") {
-                                                e.target.innerText = "Applied"
-                                                const total = ((ticketState.place?.price ? ticketState.place.price : 0)
-                                                    + (pickedFoodState > 1 ? foodItems[pickedFoodState].price : 0)
-                                                    + (extraBaggageState === 500 ? 500 : 0))
-                                                return (prev + total * 0.2)
-                                            } else return prev;
+                                            if (e.target instanceof HTMLButtonElement) {
+                                                if (e.target.innerText === "Apply") {
+                                                    e.target.innerText = "Applied"
+                                                    const total = ((ticketState.place?.price ? ticketState.place.price : 0)
+                                                        + (pickedFoodState > 1 ? foodItems[pickedFoodState].price : 0)
+                                                        + (extraBaggageState === 500 ? 500 : 0))
+                                                    return (prev + total * 0.2)
+                                                } else return prev;
+                                            } else return prev
+
                                         })}>Apply
                                 </button>
                             </li>
@@ -153,10 +159,12 @@ export default function ReviewBookingPage() {
                         <button type={"button"} className={"button" + (extraBaggageState === 500 ? " active" : "")}
                                 onClick={() => setExtraBaggageState((prevState) => prevState === 0 ? 500 : 0)}
                                 onMouseEnter={(e) => {
-                                    if (extraBaggageState === 500) e.target.innerText = "Remove"
+                                    if (e.target instanceof HTMLButtonElement) {
+                                    if (extraBaggageState === 500) e.target.innerText = "Remove"}
                                 }}
                                 onMouseLeave={(e) => {
-                                    e.target.innerText = extraBaggageState === 0 ? "Add to Ticket" : "Added"
+                                    if (e.target instanceof HTMLButtonElement) {
+                                    e.target.innerText = extraBaggageState === 0 ? "Add to Ticket" : "Added"}
                                 }}
                         > {extraBaggageState === 0 ? "Add to Ticket" : "Added"}</button>
                     </div>
