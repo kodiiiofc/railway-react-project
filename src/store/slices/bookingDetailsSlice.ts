@@ -1,15 +1,10 @@
 import {createSlice, type PayloadAction} from "@reduxjs/toolkit";
-import type {Place} from "../../utils/Tickets.ts";
+import type {ITicket} from "./ticketSlice.ts";
 
 
-export interface ITicket {
-    routeNumber?: number;
-    railCarrier?: string;
-    departTimeString?: string;
-    arriveTimeString?: string;
-    departPoint?: string;
-    arrivePoint?: string;
-    place?: Place;
+export interface IBookingDetails {
+    ticket: ITicket;
+
 }
 
 const initialTicket: ITicket = {

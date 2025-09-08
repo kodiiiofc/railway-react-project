@@ -1,15 +1,15 @@
 import '../styles/InputForm.scss'
 
-interface PlusIconProps {
+interface MinusIconProps {
     color: string
 }
 
-export default function PlusIcon(props: PlusIconProps) {
+export default function MinusIcon(props: MinusIconProps) {
     return (
-    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path
-            d="M9.21859 9.2181H5.22354C4.79185 9.2181 4.44189 9.56805 4.44189 9.99974C4.44189 10.4314 4.79185 10.7814 5.22354 10.7814H9.21859V14.7764C9.21859 15.2081 9.56854 15.5581 10.0002 15.5581C10.4319 15.5581 10.7819 15.2081 10.7819 14.7764V10.7814H14.7769C15.2086 10.7814 15.5586 10.4314 15.5586 9.99974C15.5586 9.56805 15.2086 9.2181 14.7769 9.2181H10.7819V5.22305C10.7819 4.79136 10.4319 4.44141 10.0002 4.44141C9.56854 4.44141 9.21859 4.79136 9.21859 5.22305V9.2181Z"
-            fill={props.color}/>
-    </svg>
-)
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M5.21994 9.21973C4.77994 9.21973 4.43994 9.55973 4.43994 9.99973C4.43994 10.4397 4.77994 10.7797 5.21994 10.7797H14.7799C15.2199 10.7797 15.5599 10.4397 15.5599 9.99973C15.5599 9.55973 15.2199 9.21973 14.7799 9.21973H9.21994H5.21994Z"
+                fill={props.color}/>
+        </svg>
+    )
 }

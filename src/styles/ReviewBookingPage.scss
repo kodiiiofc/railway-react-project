@@ -1,0 +1,425 @@
+@use 'index';
+
+.ReviewBookingPage {
+  background-color: #f5f5f5;
+  height: 100%;
+
+  button {
+    font-size: 16px;
+    font-weight: 500;
+    display: inline-block;
+    content: 'Apply';
+    text-align: right;
+    background-color: transparent;
+    border: 1px #5e4ae3 solid;
+    border-radius: 10px;
+    color: #5e4ae3;
+    padding: 10px 25px;
+    transition: 0.3s;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #5e4ae3;
+      color: white;
+    }
+
+  }
+
+  h2 {
+    font-weight: 500;
+    font-size: 32px;
+    text-align: left;
+    margin: 0;
+
+    &:first-of-type {
+      margin-top: 32px;
+    }
+  }
+
+  h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+    font-weight: 500;
+  }
+
+  p {
+    text-align: left;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  .boardingDetails {
+
+    @extend .block;
+
+    width: 100%;
+    flex-direction: column;
+    background-color: #e6e4f3;
+    margin-top: -28px;
+
+    h4 {
+      margin: 0;
+      padding: 0;
+      text-transform: uppercase;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    .runsOnContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: start;
+      gap: 6px;
+
+      h4 {
+        text-transform: none;
+        font-size: 14px;
+        font-weight: 500;
+        margin: 0;
+        padding: 0;
+      }
+
+      div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: start;
+        gap: 6px;
+        padding: 0;
+        margin: 0;
+
+        p {
+          display: flex;
+          padding: 5px 15px;
+          background-color: transparent;
+          border: #5e4ae3 1px solid;
+          border-radius: 8px;
+          font-size: 14px;
+          font-weight: 500;
+          margin: 0;
+        }
+      }
+    }
+
+    .dates {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin: 0;
+      padding: 0;
+
+      div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        &:first-of-type {
+          align-items: start;
+        }
+
+        &:last-of-type {
+          align-items: end;
+        }
+
+        &.travelTime {
+          font-weight: 500;
+          font-size: 10px;
+          color: #90A3BF;
+        }
+      }
+
+      p {
+        margin: 0;
+        padding: 0;
+        font-size: 14px;
+
+        &.date {
+          font-weight: 500;
+          margin-bottom: 4px;
+        }
+      }
+    }
+    .places {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: start;
+      margin: 0;
+      padding: 0;
+      gap: 56px;
+
+      div {
+        width: 160px;
+        height: 92px;
+        padding: 24px 16px;
+        column-gap: 4px;
+        row-gap: 8px;
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: 1fr 1fr;
+        background-color: #FBD1A2;
+        border-radius: 10px;
+        align-items: center;
+        justify-items: start;
+        transition: ease 0.1s;
+
+        &:hover {
+          cursor: pointer;
+          scale: 1.05;
+        }
+
+        &:active {
+          scale: 0.95;
+        }
+
+        p {
+          width: 100%;
+          font-size: 12px;
+          font-weight: 500;
+          margin: 0;
+          padding: 0;
+
+          &:nth-child(2n) {
+            text-align: end;
+          }
+        }
+
+        &:first-of-type {
+          background-color: #7DCFB6;
+        }
+        &:last-of-type {
+          background-color: #f79256;
+        }
+      }
+    }
+  }
+
+  .food {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      width: calc(33% - 32px * 2 / 3);
+      padding: 14px;
+      align-items: center;
+      background-color: white;
+
+      &:hover {
+        cursor: pointer;
+        background-color: #e6e4f3;
+      }
+
+      &.active {
+        background-color: #e6e4f3;
+      }
+
+
+      img {
+        width: calc(100% + 28px);
+        margin: -24px -24px 0 -24px;
+        border-radius: 10px;
+      }
+
+      p {
+        padding: 0;
+        margin-top: 0;
+        text-align: center;
+
+        &.name {
+          height: 100%;
+          font-size: 16px;
+        }
+
+        &.price {
+          font-weight: 600;
+        }
+
+      }
+
+
+    }
+  }
+
+  .offers {
+    border: #5E4AE3 dashed 2px;
+    flex-direction: column;
+
+    h3 {
+      margin: 0;
+      padding: 0;
+      font-size: 24px;
+      font-weight: 500;
+      color: #5e4ae3;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      list-style-type: none;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+
+      li {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        p {
+          font-size: 16px;
+          font-weight: 500;
+          padding: 0;
+          margin: 0;
+          display: inline-block;
+          flex: 1;
+        }
+
+        &::before {
+          display: inline-block;
+          margin-right: 10px;
+          content: '';
+          height: 20px;
+          width: 20px;
+          background-image: url("../assets/percent.svg");
+          background-size: contain;
+        }
+
+        button {
+          font-size: 16px;
+          font-weight: 500;
+          display: inline-block;
+          content: 'Apply';
+          text-align: right;
+          background-color: transparent;
+          border: none;
+          color: #5e4ae3;
+          padding: 0;
+
+          &:hover {
+            cursor: pointer;
+            text-decoration: underline;
+          }
+        }
+
+      }
+
+    }
+
+  }
+
+  .extraBaggage {
+    align-items: center;
+    justify-content: space-between;
+
+    button {
+      width: 200px;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &.active {
+        background-color: #5e4ae3;
+        color: white;
+        &:hover {
+          background-color: indianred;
+          border-color: indianred;
+        }
+      }
+    }
+  }
+
+  .billDetails {
+    flex-direction: column;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      list-style-type: none;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      li {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        p {
+          font-size: 12px;
+          font-weight: 500;
+          padding: 0;
+          margin: 0;
+          display: inline-block;
+          flex: 1;
+          color: #808180;
+
+          &.value {
+            text-align: right;
+          }
+
+        }
+
+      }
+
+    }
+
+    div.total {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      h3 {
+        display: inline-block;
+      }
+    }
+
+  }
+
+  .bookNowContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .bookNow {
+      width: 400px;
+      height: 56px;
+      background: #5E4AE3;
+      color: #e6e4f3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+      transition: scale 0.1s;
+
+      &:hover {
+        cursor: pointer;
+        background-color: #e6e4f3;
+        box-shadow: 0 0 4px #5e4ae3;
+        color: #010400;
+      }
+
+      &:active {
+        scale: 0.9;
+      }
+    }
+  }
+
+}

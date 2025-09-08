@@ -1,61 +1,45 @@
-.header {
-  width: 100%;
-  height: 115px;
+.HomePage {
+  width: 100vw;
+  min-height: 100vh;
+  height: calc(100vh - 115px);
   display: flex;
+  background-color: #010101;
+  background-image: url("../assets/homepage_background.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 1600px 1067px;
   box-sizing: border-box;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
-  padding: 32px 64px;
   align-items: center;
+  margin: 0;
+  padding: 0;
 
-
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-
-}
-
-.dark {
-  background-color: #010400;
-  color: white;
-}
-
-.light {
-  background-color: white;
-  color: #010400;
-}
-
-.header-logo {
-  display: flex;
-  flex-direction: row;
-  justify-content: left;
-  align-items: center;
-  gap: 15px;
-  font-size: 34px;
-  font-style: italic;
-  line-height: 100%;
-}
-
-nav {
-  ul {
+  .content {
+    max-width: 880px;
+    height: 100%;
     display: flex;
-    flex-direction: row;
-    list-style: none;
-    gap: 96px;
+    flex-direction: column;
+    color: white;
     align-items: center;
+    justify-content: center;
+    gap: 0;
 
-    .signup {
-      font-weight: 600;
+    h1 {
+      font-weight: 700;
+      font-size: 82px;
+      letter-spacing: 0;
+      margin: 0;
+      padding: 0;
     }
-
-    li {
-      transition: ease-in-out 0.2s;
-    &:hover {
-      transform: scale(1.1);
+    h2 {
+      font-weight: 400;
+      font-size: 28px;
+      letter-spacing: 0;
+      text-transform: lowercase;
+      margin: 0;
+      margin-bottom: 60px;
+      padding: 0;
     }
-    &:active{
-      transform: scale(0.9);
-    }}
   }
 }
